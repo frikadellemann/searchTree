@@ -2,7 +2,7 @@ import BinNode
 class DictBinTree:
     def DictBinTree():
         T = BinNode(None)
-
+# here we defince 
     def search(T,k):
         if T == None or T == k:
             return T
