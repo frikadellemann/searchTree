@@ -18,9 +18,6 @@ class DictBinTree:
     def val(self):
         return self.val
 
-    def indsæt(BinNode,k):
-        BinNode.val=k
-
     def val(T):
         return T.val
         
@@ -34,9 +31,10 @@ class DictBinTree:
 
     def orderedTraversal(T):
         A = []
-        if T != None:
+        if T.left != None:
             T.left._orderedTraversal(A)
-            A.append(T)
+        A.append(T)
+        if T.right != None:
             T.right._orderedTraversal(A)
         return A
 
@@ -49,7 +47,7 @@ class DictBinTree:
     def insert(T,k):
         y = None
         x = T
-        while x.val != None:
+        while x != None and x.val != None:
             y = x
             if k < x.val:
                 x = x.left
@@ -57,14 +55,14 @@ class DictBinTree:
                 x = x.right
         if y == None:
             T.val = k
-        elif k < y:
+        elif k < y.val:
             y.left = BinNode(k)
         else:
             y.right = BinNode(k)
-BinNode(None)
+BinNode(10)
 R = DictBinTree()
 print(R.val)
 R.insert(1)
-print(R.val)
+print(R.orderedTraversal())
 R.insert(2)
-print(R.right)
+print(R.right.val)
