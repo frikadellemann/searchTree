@@ -1,5 +1,4 @@
 import sys
-import array as arr
 
 class BinNode:
     def __init__(self, k):
@@ -19,13 +18,11 @@ class BinNode:
 
         if T.val == k:
             return True
-        if T.val == None:
-            print(false)
-            return False
         if k < T.val and T.left != None:
             return T.left._search(k)
         elif T.right != None:
             return T.right._search(k)
+        return False
 
 class DictBinTree:
 
@@ -43,12 +40,11 @@ class DictBinTree:
 
         if T.val == k:
             return True
-        if T.val == None:
-            return False
         if T.left != None and k < T.val :
             return T.left._search(k)
         elif T.right != None:
             return T.right._search(k)
+        return False
         
 
     def orderedTraversal(T):
@@ -85,10 +81,7 @@ for line in sys.stdin:
         break
     R.insert(int(line.strip()))
 print(R.orderedTraversal())
-#print(R.val)
-#print(R.left.val)
-#print(R.right.val)
-#print(R.right.right.val)
+
 for line in sys.stdin:
     if line == "\n":
         break
