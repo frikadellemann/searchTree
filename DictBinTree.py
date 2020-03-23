@@ -1,18 +1,29 @@
-import BinNode:
+import sys
+
+
+class BinNode:
+    def __init__(self, k):
+        self.val = k
+        self.left = None
+        self.right = None
+    def val(self):
+        return self.val
 
 class DictBinTree:
-<<<<<<< Updated upstream
-    def DictBinTree():
-        T = BinNode(None)
-# here we defince 
-=======
 
-    def __init__(self, N):
-        self = N
-        self.value = N.val
-        print(self.value)
+    def __init__(self):
+        self.val = None
+        self.left = None
+        self.right = None
+    def val(self):
+        return self.val
 
->>>>>>> Stashed changes
+    def indsæt(BinNode,k):
+        BinNode.val=k
+
+    def val(T):
+        return T.val
+        
     def search(T,k):
         if T == None or T == k:
             return T
@@ -38,22 +49,22 @@ class DictBinTree:
     def insert(T,k):
         y = None
         x = T
-        while x != None:
+        while x.val != None:
             y = x
             if k < x.val:
                 x = x.left
             else:
                 x = x.right
         if y == None:
-            T = BinNode(k)
-        elif k < y.val:
+            T.val = k
+        elif k < y:
             y.left = BinNode(k)
         else:
             y.right = BinNode(k)
-N = BinNode(10)
-T = DictBinTree(N)
-T.insert(10)
-
-N.left = BinNode(20)
-
-print(N.left.val)
+BinNode(None)
+R = DictBinTree()
+print(R.val)
+R.insert(1)
+print(R.val)
+R.insert(2)
+print(R.right)

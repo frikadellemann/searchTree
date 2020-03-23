@@ -1,3 +1,4 @@
 import DictBinTree
-
-DictBinTree.insert(10)
+import sys
+T=DictBinTree
+T.insert(10)
