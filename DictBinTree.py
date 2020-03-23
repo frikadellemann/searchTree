@@ -1,8 +1,18 @@
-import BinNode
+import BinNode:
+
 class DictBinTree:
+<<<<<<< Updated upstream
     def DictBinTree():
         T = BinNode(None)
 # here we defince 
+=======
+
+    def __init__(self, N):
+        self = N
+        self.value = N.val
+        print(self.value)
+
+>>>>>>> Stashed changes
     def search(T,k):
         if T == None or T == k:
             return T
@@ -10,8 +20,6 @@ class DictBinTree:
             return T.left.search(k)
         else:
             return T.right.search(k)
-        
-
 
     def orderedTraversal(T):
         A = []
@@ -37,10 +45,15 @@ class DictBinTree:
             else:
                 x = x.right
         if y == None:
-            T = k
+            T = BinNode(k)
         elif k < y.val:
-            y.left = k
+            y.left = BinNode(k)
         else:
-            y.right = k
-DictBinTree().insert(10)
+            y.right = BinNode(k)
+N = BinNode(10)
+T = DictBinTree(N)
+T.insert(10)
 
+N.left = BinNode(20)
+
+print(N.left.val)
