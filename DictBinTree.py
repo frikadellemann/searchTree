@@ -68,7 +68,7 @@ print(R.val)
 for line in sys.stdin:
     if line == "\n":
         break
-    R.insert(line.strip())
+    R.insert(int(line.strip()))
 print(R.orderedTraversal())
 print(R.val)
 print(R.left.val)
