@@ -43,8 +43,8 @@ class DictBinTree(object):
         if y == None:
             T.val = k
         elif k < y.val:
-            y.left = BinNode(k)
+            y.left = BinNode.BinNode(k)
         else:
-            y.right = BinNode(k)
+            y.right = BinNode.BinNode(k)
             
 

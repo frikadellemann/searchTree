@@ -1,5 +1,10 @@
 import DictBinTree
 import sys
 T = DictBinTree.DictBinTree()
-T.insert(12)
-print(T.val)
+
+for line in sys.stdin:
+    if line == "\n":
+        break
+    T.insert(int(line))
+
+print(T.orderedTraversal())
