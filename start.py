@@ -1,4 +1,5 @@
 import DictBinTree
 import sys
-T=DictBinTree
-T.insert(10)
+T = DictBinTree.DictBinTree()
+T.insert(12)
+print(T.val)
