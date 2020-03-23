@@ -1,5 +1,5 @@
 import sys
-
+import array as arr
 
 class BinNode:
     def __init__(self, k):
@@ -9,12 +9,20 @@ class BinNode:
     def val(self):
         return self.val
 
+    def _orderedTraversal(T,A):
+        if T.left != None:
+            T.left._orderedTraversal(A)
+        A.append(T.val)
+        if T.right != None:
+            T.right._orderedTraversal(A)
+        return A
+
 class DictBinTree:
 
     def __init__(self):
         self.val = None
-        self.left = None
-        self.right = None
+        self.left = BinNode(None)
+        self.right = BinNode(None)
     def val(self):
         return self.val
 
@@ -33,16 +41,11 @@ class DictBinTree:
         A = []
         if T.left != None:
             T.left._orderedTraversal(A)
-        A.append(T)
+        A.append(T.val)
         if T.right != None:
             T.right._orderedTraversal(A)
         return A
 
-    def _orderedTraversal(T,A):
-        if T != None:
-            T.left._orderedTraversal(A)
-            A.append(T)
-            T.right._orderedTraversal(A)
 
     def insert(T,k):
         y = None
@@ -62,7 +65,12 @@ class DictBinTree:
 BinNode(10)
 R = DictBinTree()
 print(R.val)
-R.insert(1)
+for line in sys.stdin:
+    if line == "\n":
+        break
+    R.insert(line.strip())
 print(R.orderedTraversal())
-R.insert(2)
+print(R.val)
+print(R.left.val)
 print(R.right.val)
+print(R.right.right.val)
