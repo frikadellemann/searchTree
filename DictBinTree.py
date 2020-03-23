@@ -6,23 +6,33 @@ class BinNode:
         self.val = k
         self.left = None
         self.right = None
-    def val(self):
-        return self.val
+    
 
     def _orderedTraversal(T,A):
-        if T.left != None:
+        if T.left != None and T.left.val != None:
             T.left._orderedTraversal(A)
         A.append(T.val)
-        if T.right != None:
+        if T.right != None and T.right.val != None:
             T.right._orderedTraversal(A)
         return A
+    def _search(T,k):
+
+        if T.val == k:
+            return True
+        if T.val == None:
+            print(false)
+            return False
+        if k < T.val and T.left != None:
+            return T.left._search(k)
+        elif T.right != None:
+            return T.right._search(k)
 
 class DictBinTree:
 
     def __init__(self):
         self.val = None
-        self.left = BinNode(None)
-        self.right = BinNode(None)
+        self.left = None
+        self.right = None
     def val(self):
         return self.val
 
@@ -30,19 +40,24 @@ class DictBinTree:
         return T.val
         
     def search(T,k):
-        if T == None or T == k:
-            return T
-        if k < T.k:
-            return T.left.search(k)
-        else:
-            return T.right.search(k)
+
+        if T.val == k:
+            return True
+        if T.val == None:
+            return False
+        if T.left != None and k < T.val :
+            return T.left._search(k)
+        elif T.right != None:
+            return T.right._search(k)
+        
 
     def orderedTraversal(T):
         A = []
-        if T.left != None:
+        if T.left != None and T.left.val != None:
             T.left._orderedTraversal(A)
-        A.append(T.val)
-        if T.right != None:
+        if T.val != None:
+            A.append(T.val)
+        if T.right != None and T.right.val != None:
             T.right._orderedTraversal(A)
         return A
 
@@ -62,7 +77,7 @@ class DictBinTree:
             y.left = BinNode(k)
         else:
             y.right = BinNode(k)
-BinNode(10)
+            
 R = DictBinTree()
 print(R.val)
 for line in sys.stdin:
@@ -70,7 +85,11 @@ for line in sys.stdin:
         break
     R.insert(int(line.strip()))
 print(R.orderedTraversal())
-print(R.val)
-print(R.left.val)
-print(R.right.val)
-print(R.right.right.val)
+#print(R.val)
+#print(R.left.val)
+#print(R.right.val)
+#print(R.right.right.val)
+for line in sys.stdin:
+    if line == "\n":
+        break
+    print(R.search(int(line.strip())))
