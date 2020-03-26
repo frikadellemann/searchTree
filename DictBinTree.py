@@ -7,7 +7,7 @@ class DictBinTree(object):
     def __init__(self):
         self.val = None
         self.left = None
-        self.right = 
+        self.right = None
 
     #Search for k in tree T, and returns in boolean whether k is found
     #This method assumes that the tree is ordered   
