@@ -3,11 +3,11 @@ import BinNode
 class DictBinTree(object):
 
     #initialize root for new DictBinTree object
-    # all values is set to None from start
+    # all values are set to None from start
     def __init__(self):
         self.val = None
         self.left = None
-        self.right = None
+        self.right = 
 
     #Search for k in tree T, and returns in boolean whether k is found
     #This method assumes that the tree is ordered   
