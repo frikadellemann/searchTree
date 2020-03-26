@@ -3,14 +3,15 @@ import BinNode
 class DictBinTree(object):
 
     #initialize root for new DictBinTree object
+    # all values is set to None from start
     def __init__(self):
         self.val = None
         self.left = None
         self.right = None
 
-    #Search for k in tree T, and return in boolean whether k is found
+    #Search for k in tree T, and returns in boolean whether k is found
     #This method assumes that the tree is ordered   
-    #This is the starter method, which starts in the root and continues via the _search method from BinNode
+    #This is a starter method, which starts in the root and continues via the _search method from BinNode
     def search(T,k):
 
         if T.val == k:
@@ -22,7 +23,7 @@ class DictBinTree(object):
         return False
         
     #Go trough tree T and add the elements to array in rising order. returns the array
-    #This is the starter method, which initializes the array and passes it to the _orderedTraversal method from BinNode
+    #This is a starter method, which initializes the array and passes it to the _orderedTraversal method from BinNode
     def orderedTraversal(T):
         A = []
         if T.left != None and T.left.val != None:
