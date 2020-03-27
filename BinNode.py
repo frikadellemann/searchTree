@@ -1,3 +1,5 @@
+#/ Emil Blarke eblar19
+#/ Mads Frederik Larsen madla15
 class BinNode(object):
     #Initialize a new node
     def __init__(self, k):
