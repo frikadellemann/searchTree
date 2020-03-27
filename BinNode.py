@@ -1,6 +1,7 @@
 #/ Emil Blarke eblar19
 #/ Mads Frederik Larsen madla15
 class BinNode(object):
+    
     #Initialize a new node
     def __init__(self, k):
         self.val = k
@@ -12,6 +13,7 @@ class BinNode(object):
 
         if T.val == k:
             return True
+        if T.left != None and k < T.val :
             return T.left._search(k)
         elif T.right != None:
             return T.right._search(k)
@@ -27,3 +29,4 @@ class BinNode(object):
             T.right._orderedTraversal(A)
         return A
 
+    
