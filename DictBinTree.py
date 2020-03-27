@@ -3,10 +3,10 @@
 import BinNode
 
 class DictBinTree(object):
-    from BinNode import __init__
     #initialize root for new DictBinTree object
     # all values are set to None from start
     def __init__(self, val):
+        
         self.val = val
         self.left = BinNode.BinNode(None)
         self.right = BinNode.BinNode(None)
