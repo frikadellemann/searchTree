@@ -1,4 +1,7 @@
+#/ Emil Blarke eblar19
+#/ Mads Frederik Larsen madla15
 class BinNode(object):
+    
     #Initialize a new node
     def __init__(self, k):
         self.val = k
@@ -7,14 +10,14 @@ class BinNode(object):
 
     #'Helper method' which does exactly the same as search from DictBinTree but for BinNode objects
     def _search(T,k):
+
         if T.val == k:
             return True
-        if k < T.val and T.left != None:
+        if T.left != None and k < T.val :
             return T.left._search(k)
         elif T.right != None:
             return T.right._search(k)
         return False
-
     
     #'Helper method' which does the same as orderedTraversal from DictBinTree but for BinNode objects
     #It gets the array from orderedTraversal and builds it from the rest of the nodes
@@ -25,3 +28,5 @@ class BinNode(object):
         if T.right != None and T.right.val != None:
             T.right._orderedTraversal(A)
         return A
+
+    
