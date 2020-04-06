@@ -1,5 +1,7 @@
 class BinNode(object):
     #Initialize a new node
+    # With the root value k
+    # and left, right node initialzied to None
     def __init__(self, k):
         self.val = k
         self.left = None
